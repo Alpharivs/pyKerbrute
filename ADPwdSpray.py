@@ -11,7 +11,7 @@ from pyasn1.codec.der.encoder import encode
 from struct import pack, unpack
 from pyasn1.type.namedtype import NamedTypes, NamedType, OptionalNamedType
 from Crypto.Cipher import ARC4
-from Crypto.Cipher import MD4, MD5
+from Crypto.Hash import MD4, MD5
 from time import time, gmtime, strftime, strptime, localtime
 import hmac as HMAC
 from random import getrandbits, sample
@@ -293,14 +293,14 @@ if __name__ == '__main__':
         print('  https://github.com/ropnop/kerbrute')
         print('  https://github.com/mubix/pykek')
         print('Author: 3gstudent')
-	print('Usage:')
-	print('	%s <domainControlerAddr> <domainName> <file> <passwordtype> <data> <mode>'%(sys.argv[0]))
+        print('Usage:')
+        print('	%s <domainControlerAddr> <domainName> <file> <passwordtype> <data> <mode>'%(sys.argv[0]))
         print('<passwordtype>: clearpassword or ntlmhash')
         print('<mode>: tcp or udp')
-	print('Eg.')
-	print('	%s 192.168.1.1 test.com user.txt clearpassword DomainUser123! tcp'%(sys.argv[0]))
-	print('	%s 192.168.1.1 test.com user.txt ntlmhash e00045bd566a1b74386f5c1e3612921b udp'%(sys.argv[0]))
-	sys.exit(0)
+        print('Eg.')
+        print('	%s 192.168.1.1 test.com user.txt clearpassword DomainUser123! tcp'%(sys.argv[0]))
+        print('	%s 192.168.1.1 test.com user.txt ntlmhash e00045bd566a1b74386f5c1e3612921b udp'%(sys.argv[0]))
+        sys.exit(0)
     else:
         kdc_a = sys.argv[1]
         user_realm = sys.argv[2].upper()
